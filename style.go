@@ -140,7 +140,7 @@ func DefaultStyles(config Config) Styles {
 				Title:        lipgloss.NewStyle().Background(primary).Foreground(textInvert).Margin(0, 0, 1, 1).Padding(0, 1),
 				Separator:    lipgloss.NewStyle().Foreground(text).Margin(0, 0, 1, 1),
 				LineNumber:   lipgloss.NewStyle().Foreground(text),
-				EmptyHint:    lipgloss.NewStyle().Foreground(gray),
+				EmptyHint:    lipgloss.NewStyle().Foreground(text),
 				EmptyHintKey: lipgloss.NewStyle().Foreground(primary),
 			},
 			Blurred: ContentBaseStyle{
@@ -148,7 +148,7 @@ func DefaultStyles(config Config) Styles {
 				Title:        lipgloss.NewStyle().Background(gray).Foreground(primary).Margin(0, 0, 1, 1).Padding(0, 1),
 				Separator:    lipgloss.NewStyle().Foreground(text).Margin(0, 0, 1, 1),
 				LineNumber:   lipgloss.NewStyle().Foreground(subtext),
-				EmptyHint:    lipgloss.NewStyle().Foreground(gray),
+				EmptyHint:    lipgloss.NewStyle().Foreground(text),
 				EmptyHintKey: lipgloss.NewStyle().Foreground(primary),
 			},
 		},

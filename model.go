@@ -513,13 +513,6 @@ func (m *Model) updateActivePane(msg tea.Msg) tea.Cmd {
 	var cmds []tea.Cmd
 	var cmd tea.Cmd
 
-	m.help.Styles = help.Styles{
-		ShortKey:       lipgloss.NewStyle().Foreground(lipgloss.Color("13")), // Bright magenta
-		ShortDesc:      lipgloss.NewStyle().Foreground(lipgloss.Color("15")), // White
-		ShortSeparator: lipgloss.NewStyle().Foreground(lipgloss.Color("8")),  // Gray
-		Ellipsis:       lipgloss.NewStyle().Foreground(lipgloss.Color("8")),  // Gray
-	}
-
 	switch m.pane {
 	case folderPane:
 		m.ListStyle = DefaultStyles(m.config).Snippets.Blurred

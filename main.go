@@ -386,10 +386,13 @@ func runInteractiveMode(config Config, snippets []Snippet) error {
 
 	shit_help := help.New()
 	shit_help.Styles = help.Styles{
-		ShortKey:       lipgloss.NewStyle().Foreground(lipgloss.Color("#c6a0f6")),  // Magenta
-		ShortDesc:      lipgloss.NewStyle().Foreground(lipgloss.Color("Flamingo")), // White
-		ShortSeparator: lipgloss.NewStyle().Foreground(lipgloss.Color("8")),        // Gray
-		Ellipsis:       lipgloss.NewStyle().Foreground(lipgloss.Color("8")),        // Gray
+		ShortKey:       lipgloss.NewStyle().Foreground(lipgloss.Color("#c6a0f6")), // Magenta
+		ShortDesc:      lipgloss.NewStyle().Foreground(lipgloss.Color("#f0c6c6")), // White
+		ShortSeparator: lipgloss.NewStyle().Foreground(lipgloss.Color("8")),       // Gray
+		FullKey:        lipgloss.NewStyle().Foreground(lipgloss.Color("#c6a0f6")), // Magenta
+		FullDesc:       lipgloss.NewStyle().Foreground(lipgloss.Color("#f0c6c6")), // White
+		FullSeparator:  lipgloss.NewStyle().Foreground(lipgloss.Color("8")),       // Gray
+		Ellipsis:       lipgloss.NewStyle().Foreground(lipgloss.Color("8")),       // Gray
 	}
 
 	m := &Model{
