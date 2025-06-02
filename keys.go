@@ -41,20 +41,23 @@ var DefaultKeyMap = KeyMap{
 	TagSnippet:      key.NewBinding(key.WithKeys("t"), key.WithHelp("t", "tag"), key.WithDisabled()),
 	Confirm:         key.NewBinding(key.WithKeys("y"), key.WithHelp("y", "confirm")),
 	Cancel:          key.NewBinding(key.WithKeys("esc"), key.WithHelp("esc", "cancel")),
-	NextPane:        key.NewBinding(key.WithKeys("right", "l"), key.WithHelp("→/l", "navigate")),
-	PreviousPane:    key.NewBinding(key.WithKeys("left", "h"), key.WithHelp("←/h", "navigate")),
+	NextPane:        key.NewBinding(key.WithKeys("right", "l"), key.WithHelp("→/l", "go right")),
+	PreviousPane:    key.NewBinding(key.WithKeys("left", "h"), key.WithHelp("←/h", "go left")),
 	ChangeFolder:    key.NewBinding(key.WithKeys("enter"), key.WithHelp("enter", "change folder"), key.WithDisabled()),
 }
 
 // ShortHelp returns a quick help menu.
 func (k KeyMap) ShortHelp() []key.Binding {
 	return []key.Binding{
-		k.NextPane,
-		k.Search,
+		// k.PreviousPane,
+		// k.NextPane,
+		k.NewSnippet,
 		k.EditSnippet,
+		k.RenameSnippet,
+		k.SetFolder,
+		k.Search,
 		k.DeleteSnippet,
 		k.CopySnippet,
-		k.NewSnippet,
 		k.ToggleHelp,
 	}
 }
