@@ -30,11 +30,10 @@ type Config struct {
 	GreenColor          string `env:"NAP_GREEN" yaml:"green"`
 	BrightRedColor      string `env:"NAP_BRIGHT_RED" yaml:"bright_red"`
 	RedColor            string `env:"NAP_RED" yaml:"red"`
-	ForegroundColor     string `env:"NAP_FOREGROUND" yaml:"foreground"`
-	BackgroundColor     string `env:"NAP_BACKGROUND" yaml:"background"`
 	GrayColor           string `env:"NAP_GRAY" yaml:"gray"`
-	BlackColor          string `env:"NAP_BLACK" yaml:"black"`
-	WhiteColor          string `env:"NAP_WHITE" yaml:"white"`
+	TextColor           string `env:"NAP_TEXT" yaml:"foreground"`
+	TextInvertColor     string `env:"NAP_TEXTINVERT" yaml:"textinvert"`
+	SubTextColor        string `env:"NAP_SUBTEXT" yaml:"subtext"`
 }
 
 func newConfig() Config {
@@ -42,18 +41,17 @@ func newConfig() Config {
 		Home:                defaultHome(),
 		File:                "snippets.json",
 		DefaultLanguage:     defaultLanguage,
-		Theme:               "dracula",
-		PrimaryColor:        "#AFBEE1",
-		PrimaryColorSubdued: "#64708D",
-		BrightGreenColor:    "#BCE1AF",
-		GreenColor:          "#527251",
-		BrightRedColor:      "#E49393",
-		RedColor:            "#A46060",
-		ForegroundColor:     "15",
-		BackgroundColor:     "235",
-		GrayColor:           "241",
-		BlackColor:          "#373b41",
-		WhiteColor:          "#FFFFFF",
+		Theme:               "catppuccin-mocha",
+		PrimaryColor:        "#74c7ec",
+		PrimaryColorSubdued: "#94e2d5",
+		BrightGreenColor:    "#f9e2af",
+		GreenColor:          "#a6e3a1",
+		BrightRedColor:      "#eba0ac",
+		RedColor:            "#f38ba8",
+		GrayColor:           "#313244",
+		TextColor:           "#cdd6f4",
+		SubTextColor:        "#6c7086",
+		TextInvertColor:     "#11111b",
 	}
 }
 

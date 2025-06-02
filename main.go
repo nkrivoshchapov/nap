@@ -25,10 +25,9 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-var (
-	helpText = strings.TrimSpace(`
-Nap is a code snippet manager for your terminal.
-https://github.com/maaslalani/nap
+var helpText = strings.TrimSpace(`
+nap is a code snippet manager for your terminal.
+https://github.com/isabelroses/nap
 
 Usage:
   nap           - for interactive mode
@@ -38,7 +37,6 @@ Usage:
 Create:
   nap < main.go                 - save snippet from stdin
   nap example/main.go < main.go - save snippet with name`)
-)
 
 func main() {
 	runCLI(os.Args[1:])
@@ -386,6 +384,14 @@ func runInteractiveMode(config Config, snippets []Snippet) error {
 		lists[folder] = snippetList
 	}
 
+	shit_help := help.New()
+	shit_help.Styles = help.Styles{
+		ShortKey:       lipgloss.NewStyle().Foreground(lipgloss.Color("#c6a0f6")),  // Magenta
+		ShortDesc:      lipgloss.NewStyle().Foreground(lipgloss.Color("Flamingo")), // White
+		ShortSeparator: lipgloss.NewStyle().Foreground(lipgloss.Color("8")),        // Gray
+		Ellipsis:       lipgloss.NewStyle().Foreground(lipgloss.Color("8")),        // Gray
+	}
+
 	m := &Model{
 		Lists:        lists,
 		Folders:      folderList,
@@ -394,12 +400,11 @@ func runInteractiveMode(config Config, snippets []Snippet) error {
 		ListStyle:    defaultStyles.Snippets.Focused,
 		FoldersStyle: defaultStyles.Folders.Blurred,
 		keys:         DefaultKeyMap,
-		help:         help.New(),
+		help:         shit_help,
 		config:       config,
 		inputs: []textinput.Model{
 			newTextInput(defaultSnippetFolder + " "),
-			newTextInput(defaultSnippetName + " "),
-			newTextInput(config.DefaultLanguage),
+			newTextInput(defaultSnippetName),
 		},
 		tagsInput: newTextInput("Tags"),
 	}
